@@ -65,4 +65,16 @@ public class MemberController {
         return "memberDetail";
     }
 
+    @GetMapping("/delete")
+    public String delete(@RequestParam("memberId") Long memberId, Model model){
+        memberService.delete(memberId);
+        // 1. 삭제 후 목록을 DB에서 가져오고 memberList.jsp로 간다.
+//           List<MemberDTO> members = memberService.members();
+//           model.addAttribute("findAll",members);
+//           return "memberList";
+        //2. redirect 방식을 이용하여 /members 주소 요청
+        return "redirect:/members";
+    }
+
+
 }

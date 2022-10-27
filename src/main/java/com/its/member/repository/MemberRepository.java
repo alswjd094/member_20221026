@@ -27,4 +27,7 @@ public class MemberRepository {
         return sql.selectOne("Member.member",memberId);
     }
 
+    public void delete(Long memberId) {
+        sql.delete("Member.delete",memberId);
+    }
 }

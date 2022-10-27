@@ -20,6 +20,7 @@
     <th>회원번호</th>
     <th>이메일</th>
     <th>조회</th>
+    <th>삭제</th>
   </tr>
 
   <c:forEach items="${findAll}" var="member">
@@ -29,9 +30,20 @@
       <td>
         <a href="/member?memberId=${member.memberId}">조회</a>
       </td>
+      <td>
+        <button class="btn btn-danger" onclick="deleteMember('${member.memberId}')">삭제</button>
+          <%-- 버튼으로 함수호출하고 자바스크립트로 넘겨줄 수 있음--%>
+      </td>
     </tr>
   </c:forEach>
 </table>
 </div>
 </body>
+  <script>
+    const deleteMember = (clickedId) => {
+      console.log('${findAll}');
+      console.log("클릭한 id값: ", clickedId);
+      location.href="/delete?memberId="+clickedId;
+    }
+  </script>
 </html>

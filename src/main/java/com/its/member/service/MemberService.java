@@ -41,4 +41,8 @@ private MemberRepository memberRepository;
     }
 
 
+    public void delete(Long memberId) {
+         memberRepository.delete(memberId);
+    }
+
 }

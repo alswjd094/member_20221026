@@ -20,29 +20,26 @@ private MemberRepository memberRepository;
         }else {
             return false;
         }
-
     }
 
 
-    public MemberDTO loginResult(MemberDTO memberDTO) {
-        return memberRepository.loginResult(memberDTO);
+    public boolean loginResult(MemberDTO memberDTO) {
+        MemberDTO login = memberRepository.loginResult(memberDTO);
+        if(login != null){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     public List<MemberDTO> members(){
         return memberRepository.members();
     }
 
-    public MemberDTO member(String memberEmail) {
-        return memberRepository.member(memberEmail);
+    public MemberDTO member(Long memberId) {
+        return memberRepository.member(memberId);
 
     }
 
-    public boolean delete(MemberDTO memberDTO) {
-        int deleteResult = memberRepository.delete(memberDTO);
-        if(deleteResult > 0){
-            return true;
-        }else {
-            return false;
-        }
-    }
+
 }

@@ -18,12 +18,7 @@
     </select>
 
     <select id="member" resultType="member" parameterType="member">
-    select * from member_table where memberEmail = #{memberEmail}
-
-    </select>
-
-    <select id="delete" resultType="member" parameterType="member">
-     delete from member_table where memberId=#{memberId}
+    select * from member_table where memberId = #{memberId}
     </select>
 
 </mapper>

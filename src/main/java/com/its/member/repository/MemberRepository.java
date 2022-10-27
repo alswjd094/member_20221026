@@ -12,24 +12,19 @@ public class MemberRepository {
     @Autowired
     private SqlSessionTemplate sql;
     public int memberSave(MemberDTO memberDTO) {
-
     return sql.insert("Member.memberSave",memberDTO);
     }
 
     public MemberDTO loginResult(MemberDTO memberDTO) {
         return sql.selectOne("Member.loginResult",memberDTO);
-
     }
 
     public List<MemberDTO> members() {
         return sql.selectList("Member.members");
     }
 
-    public MemberDTO member(String memberEmail) {
-        return sql.selectOne("Member.member",memberEmail);
+    public MemberDTO member(Long memberId) {
+        return sql.selectOne("Member.member",memberId);
     }
 
-    public int delete(MemberDTO memberDTO) {
-        return sql.delete("Member.delete", memberDTO);
-    }
 }

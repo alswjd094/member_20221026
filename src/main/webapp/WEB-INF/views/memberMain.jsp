@@ -9,8 +9,13 @@
 <html>
 <head>
     <title>memberMain.jsp</title>
+    <link rel="stylesheet" href="/resources/css/bootstrap.css">
 </head>
 <body>
-<a href="/">index.jsp</a>
+<div class="container">
+    <h2>${sessionScope.loginEmail}님 환영합니다.</h2>
+    <h2>model값: ${modelEmail}</h2>
+    <a href="/">index.jsp</a>
+</div>
 </body>
 </html>

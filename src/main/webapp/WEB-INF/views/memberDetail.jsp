@@ -9,18 +9,12 @@
 <html>
 <head>
     <title>memberDetail</title>
-  <style>
-    table, th, tr,td {
-      border: 1px solid black;
-      border-collapse: collapse;
-      padding: 10px;
-      text-align: center;
+    <link rel="stylesheet" href="/resources/css/bootstrap.css">
 
-    }
-  </style>
 </head>
 <body>
-<table>
+<div class="container">
+  <table class="table table-striped table-hover">
   <tr>
     <th>회원번호</th>
     <th>이메일</th>
@@ -31,14 +25,15 @@
   </tr>
 
     <tr>
-      <td>${findByEmail.memberId}</td>
-      <td>${findByEmail.memberEmail}</td>
-      <td>${findByEmail.memberPassword}</td>
-      <td>${findByEmail.memberName}</td>
-      <td>${findByEmail.memberAge}</td>
-      <td>${findByEmail.memberMobile}</td>
+      <td>${findById.memberId}</td>
+      <td>${findById.memberEmail}</td>
+      <td>${findById.memberPassword}</td>
+      <td>${findById.memberName}</td>
+      <td>${findById.memberAge}</td>
+      <td>${findById.memberMobile}</td>
     </tr>
 
 </table>
+</div>
 </body>
 </html>

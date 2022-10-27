@@ -14,26 +14,32 @@
 </head>
 <body>
 <div class="container">
-  <table class="table table-striped table-hover">
+  <table class="table table-striped">
   <tr>
     <th>회원번호</th>
-    <th>이메일</th>
-    <th>비밀번호</th>
-    <th>이름</th>
-    <th>나이</th>
-    <th>전화번호</th>
+    <td>${findById.memberId}</td>
   </tr>
-
-    <tr>
-      <td>${findById.memberId}</td>
-      <td>${findById.memberEmail}</td>
-      <td>${findById.memberPassword}</td>
-      <td>${findById.memberName}</td>
-      <td>${findById.memberAge}</td>
-      <td>${findById.memberMobile}</td>
-    </tr>
-
-</table>
+  <tr>
+    <th>이메일</th>
+    <td>${findById.memberEmail}</td>
+  </tr>
+  <tr>
+    <th>비밀번호</th>
+    <td>${findById.memberPassword}</td>
+  </tr>
+  <tr>
+    <th>이름</th>
+    <td>${findById.memberName}</td>
+  </tr>
+  <tr>
+    <th>나이</th>
+    <td>${findById.memberAge}</td>
+  </tr>
+  <tr>
+    <th>전화번호</th>
+    <td>${findById.memberMobile}</td>
+  </tr>
+ </table>
 </div>
 </body>
 </html>

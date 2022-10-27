@@ -65,9 +65,4 @@ public class MemberController {
         return "memberDetail";
     }
 
-
-
-
-
-
 }

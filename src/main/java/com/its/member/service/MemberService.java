@@ -38,7 +38,6 @@ private MemberRepository memberRepository;
 
     public MemberDTO member(Long memberId) {
         return memberRepository.member(memberId);
-
     }
 
 

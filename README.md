@@ -9,7 +9,7 @@
 
 2. 개발내용
 
-### teck stack
+### 📚teck stack
 <img src="https://img.shields.io/badge/java-007396?style=flat-square&logo=java&logoColor=white"><br>
 <img src="https://img.shields.io/badge/IntelliJ-000000?style=flat-square&logo=IntelliJ&logoColor=white">
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/><br>

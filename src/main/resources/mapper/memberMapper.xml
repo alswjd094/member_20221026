@@ -24,6 +24,14 @@
     <delete id ="delete" parameterType="Long">
         delete from member_table where memberId = #{memberId}
     </delete>
+
+    <select id="findByEmail" resultType="member" parameterType="member">
+    select * from member_table where memberEmail=#{memberEmail}
+    </select>
+
+    <update id="update" parameterType="member" >
+        update member_table set memberName = #{memberName} where memberId=#{memberId}
+    </update>
 </mapper>
 
 

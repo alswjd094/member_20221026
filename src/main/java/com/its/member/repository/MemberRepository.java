@@ -16,6 +16,7 @@ public class MemberRepository {
     }
 
     public MemberDTO loginResult(MemberDTO memberDTO) {
+
         return sql.selectOne("Member.loginResult",memberDTO);
     }
 
@@ -29,5 +30,13 @@ public class MemberRepository {
 
     public void delete(Long memberId) {
         sql.delete("Member.delete",memberId);
+    }
+
+    public MemberDTO findByEmail(String memberEmail) {
+       return sql.selectOne("Member.findByEmail",memberEmail);
+    }
+
+    public int update(MemberDTO memberDTO) {
+        return sql.update("Member.update",memberDTO);
     }
 }

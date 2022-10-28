@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -76,5 +77,28 @@ public class MemberController {
         return "redirect:/members";
     }
 
+    @GetMapping ("/update")
+    public String updateForm(HttpSession session, Model model){
+        String memberEmail = (String) session.getAttribute("loginEmail");
+        //memberEmail로 DB에서 해당 회원의 전체정보 조회
+        MemberDTO updateForm = memberService.findByEmail(memberEmail);
+        model.addAttribute("member",updateForm);
+        return "memberUpdate";
+    }
+    @PostMapping ("/update")
+    public String update(@ModelAttribute MemberDTO memberDTO){
+       boolean result = memberService.update(memberDTO);
+       if(result) {
+           return "redirect:/member?memberId="+memberDTO.getMemberId();
+       } else {
+           return "index";
+       }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return"index";
+    }
 
 }

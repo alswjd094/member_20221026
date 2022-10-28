@@ -94,11 +94,55 @@ public class MemberController {
            return "index";
        }
     }
-
     @GetMapping("/logout")
     public String logout(HttpSession session){
         session.invalidate();
         return"index";
+    }
+    @GetMapping("/ajax-ex")
+    public String ajaxEx(){
+        return "ajaxEx";
+    }
+
+    @GetMapping("/ajax1")
+    public @ResponseBody String ajax1(){
+        System.out.println("MemberController.ajax1");
+        return "ok";
+    }
+    @PostMapping("/ajax2")
+    public @ResponseBody String ajax2(){
+        System.out.println("MemberController.ajax2");
+        return "good";
+    }
+    @GetMapping("/ajax3")
+    public @ResponseBody String ajax3(@RequestParam("value1") String value1, @RequestParam("value2") String value2){
+        System.out.println("MemberController.ajax3");
+        System.out.println("value1 = " + value1 + ", value2 = " + value2);
+        return "vvv";
+    }
+
+    @PostMapping ("/ajax4")
+    public @ResponseBody String ajax4(@RequestParam("value1") String value1, @RequestParam("value2") String value2) {
+        System.out.println("MemberController.ajax4");
+        System.out.println("value1 = " + value1 + ", value2 = " + value2);
+        String value3 = "리턴입니다.";
+        return value3;
+    }
+
+    @PostMapping("/ajax5")
+    public @ResponseBody MemberDTO ajax5(@RequestParam("value1") String value1, @RequestParam("value2") String value2) {
+        System.out.println("MemberController.ajax5");
+        System.out.println("value1 = " + value1 + ", value2 = " + value2);
+        MemberDTO memberDTO = memberService.member(12L);
+        return memberDTO;
+    }
+
+    @PostMapping("/ajax6")
+    public @ResponseBody List<MemberDTO> ajax6(@RequestParam("value1") String value1, @RequestParam("value2") String value2) {
+        System.out.println("MemberController.ajax6");
+        System.out.println("value1 = " + value1 + ", value2 = " + value2);
+        List<MemberDTO> memberList = memberService.members();
+        return memberList;
     }
 
 }
